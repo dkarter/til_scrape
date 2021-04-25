@@ -14,7 +14,7 @@ defmodule TILScrape.GatsbyPostBuilder do
   defp build_frontmatter(post) do
     """
     ---
-    slug: #{slugified_title(post.title)}
+    slug: #{TILScrape.Slugifier.slugify(post.title)}
     date: #{post.datetime}
     title: "#{post.title}"
     tags: #{tag(post)}
@@ -38,12 +38,5 @@ defmodule TILScrape.GatsbyPostBuilder do
     lines
     |> Enum.take(length(lines) - 3)
     |> Enum.join("\n")
-  end
-
-  defp slugified_title(title) do
-    title
-    |> String.downcase()
-    |> String.replace(~r/[^A-Za-z0-9\s-]/, "")
-    |> String.replace(~r/(\s|-)+/, "-")
   end
 end
