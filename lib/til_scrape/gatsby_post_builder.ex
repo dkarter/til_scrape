@@ -1,4 +1,4 @@
-defmodule TilScrape.GatsbyPostBuilder do
+defmodule TILScrape.GatsbyPostBuilder do
   @moduledoc """
   Converts a TIL post into a Gatsby post
   """

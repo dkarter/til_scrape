@@ -1,4 +1,4 @@
-defmodule TilScrape.MixProject do
+defmodule TILScrape.MixProject do
   use Mix.Project
 
   def project do

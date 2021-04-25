@@ -1,7 +1,7 @@
-defmodule TilScrape.GatsbyPostBuilderTest do
+defmodule TILScrape.GatsbyPostBuilderTest do
   use ExUnit.Case
 
-  alias TilScrape.GatsbyPostBuilder
+  alias TILScrape.GatsbyPostBuilder
 
   describe "build/1" do
     test "converts TIL post into Gatsby post" do
