@@ -18,7 +18,8 @@ defmodule TILScrape.GatsbyPostBuilder do
     date: #{post.datetime}
     title: "#{post.title}"
     tags: #{tag(post)}
-    canonical: #{original_link(post)}
+    canonicalName: "Hashrocket TIL"
+    canonicalUrl: #{original_link(post)}
     ---
     """
   end
