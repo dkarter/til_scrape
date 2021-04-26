@@ -1,10 +1,12 @@
 defmodule TILScrape do
-  alias TILScrape.TILClient
-
   @author "doriankarter"
 
   def run do
     @author
-    |> TILClient.author_tils()
+    |> TILScrape.TILClient.author_tils()
+    |> Enum.each(fn post ->
+      content = TILScrape.GatsbyPostBuilder.build(post)
+      TILScrape.GatsbyPostPersister.persist(post, content)
+    end)
   end
 end
