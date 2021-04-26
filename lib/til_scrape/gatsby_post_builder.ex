@@ -31,12 +31,13 @@ defmodule TILScrape.GatsbyPostBuilder do
     URI.merge("https://til.hashrocket.com", post.original_link)
   end
 
-  # remove author and date from bottom
+  # remove author and date from bottom and redundant title from the top
   defp content(post) do
     lines = String.split(post.content, "\n")
 
     lines
     |> Enum.take(length(lines) - 3)
+    |> Enum.drop(2)
     |> Enum.join("\n")
   end
 end
