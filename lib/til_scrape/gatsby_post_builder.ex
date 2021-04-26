@@ -18,7 +18,7 @@ defmodule TILScrape.GatsbyPostBuilder do
     date: #{post.datetime}
     title: "#{post.title}"
     tags: #{tag(post)}
-    original_link: #{original_link(post)}
+    canonical: #{original_link(post)}
     ---
     """
   end
